@@ -1,10 +1,10 @@
 {
   "name": "hub-de-leitura-api-teste",
   "version": "1.0.0",
-  "description": "",
+  "description": "Testes automatizados de API do Hub de Leitura com Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run"
   },
   "keywords": [],
   "author": "",
