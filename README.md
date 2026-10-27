@@ -1,25 +1,48 @@
-# Testes Automatizados de API — Hub de Leitura
+╔══════════════════════════════════════════════════════╗
+║       TESTES AUTOMATIZADOS DE API — HUB DE LEITURA    ║
+╚══════════════════════════════════════════════════════╝
 
-Projeto de automação de testes de API REST para o sistema educacional Hub de Leitura, utilizando Cypress.
+Projeto de estudo de automação de testes de API REST para o sistema Hub de Leitura, utilizando Cypress.
 
-## Objetivos
+════════════════════════════════════════════════════════
+SOBRE O PROJETO
+════════════════════════════════════════════════════════
+
+O repositório contém testes voltados à validação de endpoints da API, incluindo requisições HTTP, códigos de status e conteúdo das respostas. A execução depende da disponibilidade da API e da configuração dos dados e das credenciais esperadas pelos cenários.
+
+════════════════════════════════════════════════════════
+OBJETIVOS
+════════════════════════════════════════════════════════
+
 - Automatizar requisições para a API do Hub de Leitura.
 - Validar respostas e comportamentos dos endpoints cobertos pelos testes.
-- Praticar operações HTTP GET, POST, PUT e DELETE e validações de status e payloads.
+- Praticar operações HTTP GET, POST, PUT e DELETE.
+- Verificar códigos de status e conteúdo das respostas.
+- Praticar a organização e a execução de testes automatizados de API.
 
-## Tecnologias
+════════════════════════════════════════════════════════
+TECNOLOGIAS E FERRAMENTAS
+════════════════════════════════════════════════════════
+
 - JavaScript
 - Node.js e npm
 - Cypress
-- Faker para geração de dados de teste
+- Faker, para geração de dados de teste
 
-## Pré-requisitos
+════════════════════════════════════════════════════════
+PRÉ-REQUISITOS
+════════════════════════════════════════════════════════
+
 - Node.js e npm instalados.
-- Dependências instaladas com `npm install`.
-- API do Hub de Leitura disponível em `http://localhost:3000/api/`, conforme `cypress.config.js`.
-- A API deve conter os endpoints e dados esperados pelos cenários; alguns testes usam autenticação e funções auxiliares definidas em `cypress/support`.
+- Dependências do projeto instaladas.
+- API do Hub de Leitura em execução e acessível em `http://localhost:3000/api/`, conforme a configuração registrada em `cypress.config.js`.
+- Endpoints, dados e credenciais necessários aos cenários disponíveis no ambiente.
 
-## Instalação e execução
+Alguns testes utilizam autenticação e funções auxiliares definidas em `cypress/support`. Verifique esses arquivos para compreender os requisitos do ambiente.
+
+════════════════════════════════════════════════════════
+INSTALAÇÃO E EXECUÇÃO
+════════════════════════════════════════════════════════
 
 Instale as dependências:
 
@@ -39,7 +62,11 @@ Abra a interface do Cypress para selecionar e acompanhar os testes:
 npx cypress open
 ```
 
-## Estrutura do projeto
+Consulte o arquivo `package.json` para confirmar os comandos disponíveis no projeto.
+
+════════════════════════════════════════════════════════
+ESTRUTURA DO PROJETO
+════════════════════════════════════════════════════════
 
 ```text
 hub-de-leitura-api-teste/
@@ -53,18 +80,52 @@ hub-de-leitura-api-teste/
 └── README.md
 ```
 
-## Cenários cobertos
-A suíte contém cenários para listar usuários, consultar por ID, filtrar resultados, cadastrar usuários com dados válidos e inválidos, atualizar usuários e excluir usuários. Os testes dependem da disponibilidade da API e dos dados/credenciais esperados no ambiente.
+════════════════════════════════════════════════════════
+CENÁRIOS DE TESTE
+════════════════════════════════════════════════════════
 
-**Observação:** há um cenário de exclusão marcado como ignorado (`it.skip`) no arquivo de testes; ele não será executado pela suíte. Os resultados reais devem ser confirmados executando os testes no ambiente configurado.
+Os testes documentados abrangem cenários relacionados a:
 
-## 📚 Aprendizados
-O projeto permite praticar automação de API com Cypress, configuração de URL base, envio de requisições HTTP, autenticação, geração de dados dinâmicos e validação de status e conteúdo das respostas.
+- Listagem de usuários.
+- Consulta de usuário por ID.
+- Filtragem de resultados.
+- Cadastro de usuários com dados válidos e inválidos.
+- Atualização de usuários.
+- Exclusão de usuários.
 
-## Considerações finais
-A execução requer que a API esteja ativa em `http://localhost:3000/api/` ou que a configuração seja ajustada para o ambiente utilizado. Consulte os testes em `cypress/e2e` e os comandos auxiliares em `cypress/support` para conhecer os cenários implementados.
+A execução depende dos endpoints, dos dados e das credenciais esperados pelo projeto. Há um cenário de exclusão marcado com `it.skip`, portanto ele não é executado pela suíte enquanto permanecer ignorado.
 
----
+Os cenários listados descrevem a cobertura indicada pelos arquivos do projeto; os resultados precisam ser confirmados por meio da execução no ambiente configurado.
 
-## 🎓 Formação
-Atividade desenvolvida durante a formação profissionalizante em **Quality Assurance (QA) pela EBAC — Escola Britânica de Artes Criativas e Tecnologia**.
+════════════════════════════════════════════════════════
+BOAS PRÁTICAS
+════════════════════════════════════════════════════════
+
+- Organizar os testes por meio da estrutura do Cypress.
+- Separar arquivos de suporte e dados de teste dos cenários.
+- Validar status HTTP e conteúdo das respostas.
+- Considerar os requisitos de autenticação e a disponibilidade da API.
+- Evitar armazenar credenciais ou segredos diretamente no código.
+- Registrar falhas e confirmar os resultados pela execução real da suíte.
+
+════════════════════════════════════════════════════════
+APRENDIZADOS
+════════════════════════════════════════════════════════
+
+O projeto oferece prática com automação de API utilizando Cypress, configuração de URL base, envio de requisições HTTP, autenticação, geração de dados dinâmicos e validação de status e conteúdo das respostas.
+
+════════════════════════════════════════════════════════
+CONSIDERAÇÕES FINAIS
+════════════════════════════════════════════════════════
+
+Antes de executar a suíte, confirme que a API está ativa em `http://localhost:3000/api/` ou ajuste a configuração para o ambiente utilizado. Consulte os arquivos em `cypress/e2e` e os comandos auxiliares em `cypress/support` para conhecer os cenários e as dependências.
+
+Este projeto tem finalidade educacional e não representa, por si só, experiência profissional.
+
+════════════════════════════════════════════════════════
+FORMAÇÃO E NATUREZA DA ATIVIDADE
+════════════════════════════════════════════════════════
+
+Este projeto foi desenvolvido como uma **atividade facultativa** no contexto dos estudos de Quality Assurance (QA), durante a formação da EBAC — Escola Britânica de Artes Criativas e Tecnologia. Seu objetivo é praticar e consolidar conhecimentos de testes automatizados de API.
+
+════════════════════════════════════════════════════════
